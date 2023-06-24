@@ -1,5 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import testHookPlugin from "./src/plugin/test-hooks-plugin";
+import virtualTestPluginFn from "./src/plugin/virtual-module";
 
 // .env.development
 // NODE_ENV = development;
@@ -14,5 +16,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   // 部署域名基地址
   // base:''
-  plugins: [react()],
+  plugins: [
+    react(),
+    //  testHookPlugin(),
+    virtualTestPluginFn(),
+  ],
 });
